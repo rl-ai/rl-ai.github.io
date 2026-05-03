@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RL AI builds AI-assisted investing and algorithmic trading research tools for market analysis, strategy testing, and data-driven decision support." />
+  <title>RL AI | AI-Assisted Investing & Algorithmic Trading Research</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --panel-2: #0b1220;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-2: #7ee787;
+      --warning: #f2cc60;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+      --radius: 14px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(88, 166, 255, 0.18), transparent 34rem),
+        radial-gradient(circle at top right, rgba(126, 231, 135, 0.10), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      background: rgba(13, 17, 23, 0.76);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0d1117;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.94rem;
+    }
+
+    main { max-width: var(--max); margin: 0 auto; padding: 3.2rem 1.2rem 4rem; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.4rem;
+      align-items: stretch;
+      margin-bottom: 1.4rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(22, 27, 34, 0.98), rgba(13, 17, 23, 0.86));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem;
+    }
+
+    .hero-card { padding: 2rem; }
+
+    .eyebrow {
+      color: var(--accent-2);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.9rem;
+      margin-bottom: 0.7rem;
+    }
+
+    h1, h2, h3 { line-height: 1.18; margin: 0 0 0.8rem; }
+    h1 { font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.05em; }
+    h2 { font-size: clamp(1.45rem, 3vw, 2.15rem); letter-spacing: -0.03em; }
+    h3 { font-size: 1.05rem; }
+
+    p { margin: 0 0 1rem; color: var(--muted); }
+    p:last-child { margin-bottom: 0; }
+
+    .lead { color: #c9d1d9; font-size: 1.1rem; max-width: 68ch; }
+
+    .button-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.3rem; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #07101f;
+    }
+
+    .grid { display: grid; gap: 1rem; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    section { margin-top: 1.2rem; }
+
+    .meta-list {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1rem 0 0;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 0.8rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .meta-row:first-child { border-top: 0; padding-top: 0; }
+    .label { color: var(--muted); font-size: 0.9rem; }
+    .value { color: var(--text); font-weight: 600; }
+
+    .tag-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+
+    .tag {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.78rem;
+      color: #c9d1d9;
+      background: rgba(88, 166, 255, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.32rem 0.58rem;
+    }
+
+    .code-block {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.88rem;
+      color: #c9d1d9;
+      background: #010409;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0 0;
+    }
+
+    ul { margin: 0.6rem 0 0; padding-left: 1.2rem; color: var(--muted); }
+    li { margin: 0.4rem 0; }
+
+    .notice {
+      border-color: rgba(242, 204, 96, 0.45);
+      background: rgba(242, 204, 96, 0.07);
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.2rem 2.2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero, .grid.two, .grid.three { grid-template-columns: 1fr; }
+      nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+      .hero-card { padding: 1.35rem; }
+      .meta-row { grid-template-columns: 1fr; gap: 0.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="RL AI home">
+        <span class="logo">RL</span>
+        <span>RL AI</span>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#purpose">Purpose</a>
+        <a href="#technology">Technology</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <article class="card hero-card">
+        <div class="eyebrow">AI-assisted investing · algorithmic trading research</div>
+        <h1>Building intelligent research tools for market analysis.</h1>
+        <p class="lead">
+          RL AI develops AI-assisted investing and algorithmic trading research systems that help analyze market data,
+          test systematic strategies, and support data-driven investment workflows.
+        </p>
+        <div class="button-row">
+          <a class="button primary" href="#overview">View project overview</a>
+          <a class="button" href="mailto:contact@yourdomain.com">Contact RL AI</a>
+        </div>
+        <div class="tag-row" aria-label="Technical focus areas">
+          <span class="tag">machine-learning-research</span>
+          <span class="tag">market-data-analysis</span>
+          <span class="tag">strategy-backtesting</span>
+          <span class="tag">gpu-accelerated-compute</span>
+        </div>
+      </article>
+
+      <aside class="card">
+        <h2>Project status</h2>
+        <div class="meta-list">
+          <div class="meta-row">
+            <div class="label">Company</div>
+            <div class="value">RL AI</div>
+          </div>
+          <div class="meta-row">
+            <div class="label">Focus</div>
+            <div class="value">AI-assisted investing and trading-algorithm research</div>
+          </div>
+          <div class="meta-row">
+            <div class="label">Stage</div>
+            <div class="value">Prototype / research and development</div>
+          </div>
+          <div class="meta-row">
+            <div class="label">Use case</div>
+            <div class="value">Market analysis, signal research, backtesting, and decision support</div>
+          </div>
+          <div class="meta-row">
+            <div class="label">Contact</div>
+            <div class="value"><a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="overview" class="grid two">
+      <article class="card">
+        <h2>What RL AI does</h2>
+        <p>
+          RL AI is a technology company focused on applied artificial intelligence for investment research. The company
+          is building tools that combine market data, machine-learning models, and systematic strategy testing to help
+          evaluate trading ideas with more structure and less manual analysis.
+        </p>
+        <p>
+          The platform is designed for research workflows: ingesting financial data, engineering features, testing model
+          behavior, running backtests, comparing strategies, and producing clear outputs that can support human review.
+        </p>
+      </article>
+
+      <article id="purpose" class="card">
+        <h2>Purpose</h2>
+        <p>
+          The purpose of RL AI is to make quantitative investing research more accessible, repeatable, and evidence-driven.
+          Instead of relying only on ad hoc chart review or manual spreadsheet analysis, RL AI aims to provide a structured
+          AI research environment for exploring market patterns, testing hypotheses, and evaluating strategy performance.
+        </p>
+        <p>
+          RL AI is built around the idea that AI should assist the research process rather than replace judgment. The goal
+          is to support better analysis, faster experimentation, and clearer risk-aware decision-making.
+        </p>
+      </article>
+    </section>
+
+    <section class="grid three">
+      <article class="card">
+        <h3>Problem</h3>
+        <p>
+          Investors and strategy developers often spend significant time cleaning data, testing ideas manually, and comparing
+          results across disconnected tools.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Approach</h3>
+        <p>
+          RL AI uses machine learning, systematic backtesting, and automated analysis pipelines to evaluate strategy ideas
+          in a more repeatable research process.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Output</h3>
+        <p>
+          The system is intended to produce research summaries, model signals, strategy diagnostics, and performance metrics
+          that can be reviewed before any real-world use.
+        </p>
+      </article>
+    </section>
+
+    <section id="technology" class="grid two">
+      <article class="card">
+        <h2>Technical focus</h2>
+        <ul>
+          <li>Financial time-series analysis and market-data processing</li>
+          <li>Machine-learning model development for research signals</li>
+          <li>Algorithmic strategy simulation and backtesting</li>
+          <li>Feature engineering, model evaluation, and experiment tracking</li>
+          <li>Risk-aware reporting and human-readable research summaries</li>
+        </ul>
+        <div class="code-block" aria-label="Example workflow">
+          <div>$ rl-ai research run</div>
+          <div>├─ ingest market data</div>
+          <div>├─ generate features</div>
+          <div>├─ train / evaluate models</div>
+          <div>├─ run backtests</div>
+          <div>└─ produce strategy diagnostics</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Why accelerated compute matters</h2>
+        <p>
+          RL AI's research workflows can involve large datasets, repeated simulations, model training, inference testing,
+          and many experimental strategy variations. GPU-accelerated compute helps shorten the iteration cycle for model
+          development, backtesting experiments, and data-processing workloads.
+        </p>
+        <p>
+          Faster experimentation allows the company to evaluate more hypotheses, compare more model configurations, and
+          improve the reliability of research outputs before deployment or human review.
+        </p>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>Current development areas</h2>
+        <ul>
+          <li>AI-assisted investment research interface</li>
+          <li>Trading-signal model experimentation</li>
+          <li>Backtesting and strategy comparison workflows</li>
+          <li>Market-data feature generation and normalization</li>
+          <li>Model-performance and risk-analysis reporting</li>
+        </ul>
+      </article>
+
+      <article id="contact" class="card">
+        <h2>Company information</h2>
+        <div class="meta-list">
+          <div class="meta-row">
+            <div class="label">Legal name</div>
+            <div class="value">RL AI [LLC / Inc. / Legal Entity]</div>
+          </div>
+          <div class="meta-row">
+            <div class="label">Location</div>
+            <div class="value">[City, State / Remote]</div>
+          </div>
+          <div class="meta-row">
+            <div class="label">Founded</div>
+            <div class="value">[Month Year]</div>
+          </div>
+          <div class="meta-row">
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card notice">
+      <h2>Important notice</h2>
+      <p>
+        RL AI is developing technology for investment research and decision support. Information on this website is for
+        general company and product-description purposes only. RL AI does not provide personalized financial advice,
+        brokerage services, or guarantees of investment performance. Any trading or investing activity involves risk.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> RL AI. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
