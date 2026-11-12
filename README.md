@@ -53,3 +53,16 @@ RL AI is in an early product-development and research phase. The current focus i
 ## Important notice
 
 RL AI is developing technology for investment research and decision support. Information in this repository and on the website is for general company and product-description purposes only. RL AI does not provide personalized financial advice, brokerage services, or guarantees of investment performance. Trading and investing involve risk.
+
+
+---
+
+## Aerial — governed agents that work for you
+
+A daily planner that connects the accounts you choose, consolidates
+everything locally (privacy by design), plans your day around you, and
+turns gaps between your knowledge base and the world into opportunities
+that agents act on. One executive agent — your chief of staff — delivers
+it all as a personalized report.
+
+→ [github.com/rl-ai/aerial](https://github.com/rl-ai/aerial) · [60-second teaser](https://rl-ai.github.io/aerial-teaser.html)
