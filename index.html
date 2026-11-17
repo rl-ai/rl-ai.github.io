@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RL AI</title>
+<meta name="description" content="RL AI builds open-source AI applications: autonomous agents that do real work, run on your own hardware, and stay under your control. First product: Aerial, in pilot.">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 0 64px;
+    font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f6f7f9; color: #1c2330;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  header.top { padding: 52px 0 8px; }
+  h1 { font-size: 34px; line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.6px; }
+  h2 { font-size: 21px; margin: 0 0 12px; letter-spacing: -0.3px; }
+  p { margin: 0 0 12px; }
+  a { color: #0b62d6; }
+  section { margin-top: 44px; }
+  .kicker { font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase; color: #7a8496; margin-bottom: 6px; }
+  .lede { font-size: 18px; color: #3a4456; }
+  .card { background: #fff; border: 1px solid #dde2ea; border-radius: 10px; padding: 18px 20px; margin: 12px 0; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; background: #fdf3d7; border: 1px solid #e7d28a; color: #6b5410; vertical-align: 3px; margin-left: 6px; }
+  ul.feat { padding-left: 18px; margin: 10px 0 14px; }
+  ul.feat li { margin: 6px 0; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .btn { display: inline-block; padding: 9px 14px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid #0b62d6; }
+  .btn.primary { background: #0b62d6; color: #fff; }
+  .btn.ghost { color: #0b62d6; background: transparent; }
+  .muted { color: #5a6577; font-size: 14px; }
+  footer { margin-top: 56px; border-top: 1px solid #dde2ea; padding-top: 18px; color: #5a6577; font-size: 14px; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #101319; color: #dfe4ec; }
+    .lede { color: #c3cad6; }
+    .muted, footer, .kicker { color: #98a2b3; }
+    .card { background: #171c25; border-color: #2a3140; }
+    footer { border-top-color: #2a3140; }
+    a { color: #6aa6ff; }
+    .btn { border-color: #6aa6ff; }
+    .btn.primary { background: #2f7de1; color: #fff; }
+    .btn.ghost { color: #6aa6ff; }
+    .badge { background: #3a3014; border-color: #6b5a1f; color: #f0d98a; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">RL AI</div>
+    <h1>Open-source AI applications that run on your hardware.</h1>
+    <p class="lede">We build autonomous agents that do real work, run on your own machines, and stay under your control.</p>
+  </header>
+
+  <section id="aerial">
+    <div class="card">
+      <h2>Aerial <span class="badge">PILOT · BETA</span></h2>
+      <p>The control tower for a swarm of autonomous agents. Agents work on their own while the operations layer keeps the swarm coordinated, evidenced and busy.</p>
+      <ul class="feat">
+        <li><b>Ticket hub:</b> tasks as shared context, so agents and roles working one task inherit its evidence and decisions.</li>
+        <li><b>Ops agent:</b> every 5 minutes, failures are classified, ticketed, fixed and re-checked. A fix isn't done until a probe proves it.</li>
+        <li><b>Fleet manager:</b> bring your own model (local, self-hosted or cloud), with VRAM management and self-healing seats.</li>
+        <li><b>Reporting:</b> a daily board, an executive report, and usage per call and per seat.</li>
+        <li><b>Fully local:</b> no telemetry; nothing leaves your machines.</li>
+      </ul>
+      <p class="muted">Pilot release: the core runs daily on our own fleet, but it isn't packaged for general use yet.</p>
+      <div class="links">
+        <a class="btn primary" href="https://github.com/rl-ai/aerial">Aerial on GitHub</a>
+        <a class="btn ghost" href="https://github.com/rl-ai/aerial/blob/main/GETTING-STARTED.md">Getting started</a>
+        <a class="btn ghost" href="aerial-teaser.html">60-second teaser</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contribute">
+    <h2>The pilot is open</h2>
+    <p>Feedback from people running Aerial shapes the roadmap.</p>
+    <ul class="feat">
+      <li>Running it? Share your setup in <a href="https://github.com/rl-ai/aerial/discussions">Discussions</a>.</li>
+      <li>Found something broken? File a <a href="https://github.com/rl-ai/aerial/issues/new?template=bug.md">bug report</a> with your <code>bin/aerial_verify.py</code> output.</li>
+      <li>Want something? Open a <a href="https://github.com/rl-ai/aerial/issues/new?template=feature.md">feature proposal</a>.</li>
+      <li>Code welcome: see <a href="https://github.com/rl-ai/aerial/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</li>
+    </ul>
+    <p class="muted">Known limits and the running fix log: <a href="https://github.com/rl-ai/aerial/blob/main/ROADMAP.md">ROADMAP.md</a> · <a href="https://github.com/rl-ai/aerial/blob/main/docs/BUGLIST.md">BUGLIST.md</a></p>
+  </section>
+
+  <section id="origin">
+    <h2>Where we came from</h2>
+    <p>RL AI started in AI-assisted investing research: market-data pipelines, backtesting and model evaluation for systematic strategies. That work taught the habits Aerial runs on: evidence over claims, reproducible workflows and careful outputs.</p>
+    <p class="muted">Nothing on this site is financial advice.</p>
+  </section>
+
+  <footer>RL AI · <a href="https://github.com/rl-ai">github.com/rl-ai</a></footer>
+</div>
+</body>
+</html>

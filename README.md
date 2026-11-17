@@ -28,8 +28,8 @@ swarm coordinated, evidenced, and saturated.
 Pilot release (beta): the core is production-tested daily on the team's
 own fleet, but not yet packaged for general distribution.
 
-â†’ [github.com/rl-ai/aerial](https://github.com/rl-ai/aerial) Â·
-[Getting started](https://github.com/rl-ai/aerial/blob/main/GETTING-STARTED.md) Â·
+→ [github.com/rl-ai/aerial](https://github.com/rl-ai/aerial) ·
+[Getting started](https://github.com/rl-ai/aerial/blob/main/GETTING-STARTED.md) ·
 [60-second teaser](https://rl-ai.github.io/aerial-teaser.html)
 
 ## Contribute
@@ -37,7 +37,7 @@ own fleet, but not yet packaged for general distribution.
 This is a pilot -- feedback is the roadmap.
 
 - **Running it?** Post your setup in
-  [Discussions â†’ Show and tell](https://github.com/rl-ai/aerial/discussions) --
+  [Discussions → Show and tell](https://github.com/rl-ai/aerial/discussions) --
   model seats, workflows, integrations, screenshots
 - **Found something broken?** [Bug report](https://github.com/rl-ai/aerial/issues/new?template=bug.md) --
   include `bin/aerial_verify.py` output; it's the most useful thing you can send
@@ -45,7 +45,7 @@ This is a pilot -- feedback is the roadmap.
 - **Code contributions welcome** -- see [CONTRIBUTING.md](https://github.com/rl-ai/aerial/blob/main/CONTRIBUTING.md)
 
 Known limitations and the running fix log:
-[ROADMAP.md](https://github.com/rl-ai/aerial/blob/main/ROADMAP.md) Â·
+[ROADMAP.md](https://github.com/rl-ai/aerial/blob/main/ROADMAP.md) ·
 [docs/BUGLIST.md](https://github.com/rl-ai/aerial/blob/main/docs/BUGLIST.md)
 
 ## Where we came from
